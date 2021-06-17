@@ -1,0 +1,151 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "array",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": [],
+  "examples": [
+    [
+      {
+        "id": 1,
+        "firstName": "Vernon",
+        "lastName": "Harper",
+        "email": "egestas.rhoncus.Proin@massaQuisqueporttitor.org",
+        "programme": "Financial Analysis",
+        "courses": [
+          "Accounting",
+          "Statistics"
+        ]
+      },
+      {
+        "id": 2,
+        "firstName": "Murphy",
+        "lastName": "Holmes",
+        "email": "faucibus.orci.luctus@Duisac.net",
+        "programme": "Financial Analysis",
+        "courses": [
+          "Accounting",
+          "Statistics"
+        ]
+      }
+    ]
+  ],
+  "additionalItems": true,
+  "items": {
+    "$id": "#/items",
+    "anyOf": [
+      {
+        "$id": "#/items/anyOf/0",
+        "type": "object",
+        "title": "The first anyOf schema",
+        "description": "An explanation about the purpose of this instance.",
+        "default": {},
+        "examples": [
+          {
+            "id": 1,
+            "firstName": "Vernon",
+            "lastName": "Harper",
+            "email": "egestas.rhoncus.Proin@massaQuisqueporttitor.org",
+            "programme": "Financial Analysis",
+            "courses": [
+              "Accounting",
+              "Statistics"
+            ]
+          }
+        ],
+        "required": [
+          "id",
+          "firstName",
+          "lastName",
+          "email",
+          "programme",
+          "courses"
+        ],
+        "properties": {
+          "id": {
+            "$id": "#/items/anyOf/0/properties/id",
+            "type": "integer",
+            "title": "The id schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+              1
+            ]
+          },
+          "firstName": {
+            "$id": "#/items/anyOf/0/properties/firstName",
+            "type": "string",
+            "title": "The firstName schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "Vernon"
+            ]
+          },
+          "lastName": {
+            "$id": "#/items/anyOf/0/properties/lastName",
+            "type": "string",
+            "title": "The lastName schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "Harper"
+            ]
+          },
+          "email": {
+            "$id": "#/items/anyOf/0/properties/email",
+            "type": "string",
+            "title": "The email schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "egestas.rhoncus.Proin@massaQuisqueporttitor.org"
+            ]
+          },
+          "programme": {
+            "$id": "#/items/anyOf/0/properties/programme",
+            "type": "string",
+            "title": "The programme schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "Financial Analysis"
+            ]
+          },
+          "courses": {
+            "$id": "#/items/anyOf/0/properties/courses",
+            "type": "array",
+            "title": "The courses schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+              [
+                "Accounting",
+                "Statistics"
+              ]
+            ],
+            "additionalItems": true,
+            "items": {
+              "$id": "#/items/anyOf/0/properties/courses/items",
+              "anyOf": [
+                {
+                  "$id": "#/items/anyOf/0/properties/courses/items/anyOf/0",
+                  "type": "string",
+                  "title": "The first anyOf schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": "",
+                  "examples": [
+                    "Accounting",
+                    "Statistics"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    ]
+  }
+}

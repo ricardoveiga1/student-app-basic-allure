@@ -1,0 +1,109 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+    {
+      "id": 6,
+      "firstName": "Harper",
+      "lastName": "Rashad",
+      "email": "vestibulum@ridiculusmus.edu",
+      "programme": "Disaster Management",
+      "courses": [
+        "Disaster Preparedness"
+      ]
+    }
+  ],
+  "required": [
+    "id",
+    "firstName",
+    "lastName",
+    "email",
+    "programme",
+    "courses"
+  ],
+  "properties": {
+    "id": {
+      "$id": "#/properties/id",
+      "type": "integer",
+      "title": "The id schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": 0,
+      "examples": [
+        6
+      ]
+    },
+    "firstName": {
+      "$id": "#/properties/firstName",
+      "type": "string",
+      "title": "The firstName schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "Harper"
+      ]
+    },
+    "lastName": {
+      "$id": "#/properties/lastName",
+      "type": "string",
+      "title": "The lastName schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "Rashad"
+      ]
+    },
+    "email": {
+      "$id": "#/properties/email",
+      "type": "string",
+      "title": "The email schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "vestibulum@ridiculusmus.edu"
+      ]
+    },
+    "programme": {
+      "$id": "#/properties/programme",
+      "type": "string",
+      "title": "The programme schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "Disaster Management"
+      ]
+    },
+    "courses": {
+      "$id": "#/properties/courses",
+      "type": "array",
+      "title": "The courses schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": [],
+      "examples": [
+        [
+          "Disaster Preparedness"
+        ]
+      ],
+      "additionalItems": true,
+      "items": {
+        "$id": "#/properties/courses/items",
+        "anyOf": [
+          {
+            "$id": "#/properties/courses/items/anyOf/0",
+            "type": "string",
+            "title": "The first anyOf schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "Disaster Preparedness"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "additionalProperties": true
+}
