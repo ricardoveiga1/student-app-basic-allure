@@ -20,13 +20,15 @@ public class getAllStudentsTest extends TestBase {
         Response response =
                 given()
                         .when()
-
+                        .param("limit", 10)
                         .contentType(ContentType.JSON)
                         .when()
                         .get("/list");
         response.prettyPrint();
         response
                 .then()
+                .statusCode(HttpStatus.SC_OK)
+                .statusCode(200)
                 .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schemas/getStudents.json"));
     }
 
